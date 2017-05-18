@@ -1,0 +1,8 @@
+{
+    "web":{
+        "host":"postmark.local",
+        "http":{
+            "port":"80"
+        }
+    }
+}
