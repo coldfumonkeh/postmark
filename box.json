@@ -1,32 +1,32 @@
 {
-  "name": "Postmark",
-  "slug": "postmark",
-  "version": "1.0.0",
-  "author": "Matt Gifford <matt@monkehworks.com>",
-  "location": "https://github.com/coldfumonkeh/postmark",
-  "directory": "",
-  "createPackageDirectory": "true",
-  "homepage": "https://github.com/coldfumonkeh/postmark",
-  "documentation": "https://github.com/coldfumonkeh/postmark",
-  "type": "modules",
-  "repository": {
-    "type": "git",
-    "URL": "https://github.com/coldfumonkeh/postmark"
-  },
-  "bugs": "https://github.com/coldfumonkeh/postmark/issues",
-  "shortDescription": "A ColdFusion wrapper to interact with the Postmark App API",
-  "keywords": [
-    "postmark",
-    "email",
-    "api",
-    "transactional",
-    "bounce",
-    "tracking"
-  ],
-  "scripts":{
-      "postVersion":"package set location='coldfumonkeh/postmark#v`package version`'",
-      "onRelease":"publish",
-      "postPublish":"!git push --follow-tags"
-  },
-  "private": "false"
+    "name":"Postmark",
+    "slug":"postmark",
+    "version":"-minor",
+    "author":"Matt Gifford <matt@monkehworks.com>",
+    "location":"coldfumonkeh/postmark#v-minor",
+    "directory":"",
+    "createPackageDirectory":"true",
+    "homepage":"https://github.com/coldfumonkeh/postmark",
+    "documentation":"https://github.com/coldfumonkeh/postmark",
+    "type":"modules",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/coldfumonkeh/postmark"
+    },
+    "bugs":"https://github.com/coldfumonkeh/postmark/issues",
+    "shortDescription":"A ColdFusion wrapper to interact with the Postmark App API",
+    "keywords":[
+        "postmark",
+        "email",
+        "api",
+        "transactional",
+        "bounce",
+        "tracking"
+    ],
+    "scripts":{
+        "postVersion":"package set location='coldfumonkeh/postmark#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    },
+    "private":"false"
 }
