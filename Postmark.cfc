@@ -54,7 +54,7 @@ component output="false" accessors="true" {
   ){
     var emailData = stripServerTokenAndClean( arguments );
     var aAttachments = [];
-    if( structKeyExists(email, 'attachments' ) && arrayLen( emailData.attachments ) ){
+    if( structKeyExists(emailData, 'attachments' ) && arrayLen( emailData.attachments ) ){
       for( attachment in emailData.attachments ){
         arrayAppend(
           aAttachments,
@@ -1204,7 +1204,7 @@ component output="false" accessors="true" {
     if( structCount( arguments.params ) ){
       strURL = strURL & '?' & buildParamString( arguments.params );
     }
-    httpService = new http( method=arguments.method, url=strURL );
+    var httpService = new http( method=arguments.method, url=strURL );
     httpService.addParam( type='header', name=arguments.xHeader[ 'name' ], value=arguments.xHeader[ 'value' ] );
     httpService.addParam( type='header', name='Content-Type', value='application/json' );
     if( len( arguments.body ) ){

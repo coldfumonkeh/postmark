@@ -47,7 +47,7 @@ oPostmark.sendEmail(
   To='recipient@email.here',
   subject='Your awesome email subject line here',
   TextBody='This is the email email.',
-  HtmlBody='<p>This is the email body</p>'
+  HtmlBody='<p>This is the email body</p>',
   attachments=[
     '/attachments/test.txt',
     '/attachments/something.png'
