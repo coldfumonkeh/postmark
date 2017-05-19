@@ -55,7 +55,7 @@ component output="false" accessors="true" {
     var emailData = stripServerTokenAndClean( arguments );
     var aAttachments = [];
     if( structKeyExists(emailData, 'attachments' ) && arrayLen( emailData.attachments ) ){
-      for( attachment in emailData.attachments ){
+      for( var attachment in emailData.attachments ){
         arrayAppend(
           aAttachments,
           {
@@ -83,7 +83,7 @@ component output="false" accessors="true" {
     for( var email in arguments.emailData ){
       var aAttachments = [];
       if( structKeyExists(email, 'attachments' ) && arrayLen( email.attachments ) ){
-        for( attachment in email.attachments ){
+        for( var attachment in email.attachments ){
           arrayAppend(
             aAttachments,
             {
@@ -1147,8 +1147,8 @@ component output="false" accessors="true" {
     required struct params = {}
   ){
     return makeRequest(
-        endpoint = endpoint,
-        method    = method,
+        endpoint  = arguments.endpoint,
+        method    = arguments.method,
         body      = arguments.body,
         params    = arguments.params,
         xHeader   = {
@@ -1223,7 +1223,7 @@ component output="false" accessors="true" {
   ){
     var sParams = arguments.params;
     var strParams = '';
-    for( key in sParams ){
+    for( var key in sParams ){
       if( len( sParams[ key ] ) ){
         if( listLen( strParams ) ){
           strParams = strParams & '&';
@@ -1242,7 +1242,7 @@ component output="false" accessors="true" {
     required struct params
   ){
     var sParams = arguments.params;
-    for( key in sParams ){
+    for( var key in sParams ){
       if( !len( sParams[ key ] ) ){
         structDelete( sParams, key );
       }
