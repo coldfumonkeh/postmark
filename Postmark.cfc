@@ -1262,4 +1262,17 @@ component output="false" accessors="true" {
     return sBody;
   }
 
+  /**
+  * Returns the properties as a struct
+  */
+  struct function getMemento(){
+    var result = {};
+    for( var thisProp in getMetaData( this ).properties ){
+      if( structKeyExists( variables, thisProp[ 'name' ] ) ){
+        result[ thisProp[ 'name' ] ] = variables[ thisProp[ 'name' ] ];
+      }
+    }
+    return result;
+  }
+
 }
