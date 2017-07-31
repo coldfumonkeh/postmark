@@ -11,7 +11,7 @@
     "type":"modules",
     "repository":{
         "type":"git",
-        "URL":"https://github.com/coldfumonkeh/postmark"
+        "URL":"git@github.com:coldfumonkeh/postmark.git"
     },
     "bugs":"https://github.com/coldfumonkeh/postmark/issues",
     "shortDescription":"A ColdFusion wrapper to interact with the Postmark App API",
