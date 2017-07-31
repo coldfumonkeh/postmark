@@ -1,9 +1,9 @@
 {
     "name":"Postmark",
     "slug":"postmark",
-    "version":"minor",
+    "version":"1.2.0",
     "author":"Matt Gifford <matt@monkehworks.com>",
-    "location":"coldfumonkeh/postmark#vminor",
+    "location":"coldfumonkeh/postmark#v1.2.0",
     "directory":"",
     "createPackageDirectory":"true",
     "homepage":"https://github.com/coldfumonkeh/postmark",
