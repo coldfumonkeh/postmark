@@ -11,7 +11,7 @@ component extends="testbox.system.BaseSpec" {
 			it( "should have the correct return type", function() {
 				expect( oPostmarkService ).toBeInstanceOf( 'Postmark' );
 				expect( oPostmarkService ).toBeTypeOf( 'component' );
-			} )
+			} );
 
 			it( "should have a function called `init`", function() {
 				expect( oPostmarkService ).toHaveKey( 'init' );

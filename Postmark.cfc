@@ -60,7 +60,7 @@ component output="false" accessors="true" {
           aAttachments,
           {
             'Name'        = attachment,
-            'Content'     = toBase64( fileReadBinary( source=attachment ) ),
+            'Content'     = toBase64( fileReadBinary( attachment ) ),
             'ContentType' = getPageContext().getServletContext().getMimeType( attachment )
           }
         );
@@ -88,7 +88,7 @@ component output="false" accessors="true" {
             aAttachments,
             {
               'Name'        = attachment,
-              'Content'     = toBase64( fileReadBinary( source=attachment ) ),
+              'Content'     = toBase64( fileReadBinary( attachment ) ),
               'ContentType' = getPageContext().getServletContext().getMimeType( attachment )
             }
           );
@@ -1120,7 +1120,7 @@ component output="false" accessors="true" {
   public function listInboundRuleTrigger(
       required string serverToken,
       required numeric count = 10,
-      required numeric offset = 0,
+      required numeric offset = 0
   ){
     var sParams = structCopy( arguments );
     structDelete( sParams, 'serverToken' );
