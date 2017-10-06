@@ -32,6 +32,8 @@ Share the love and visit Matt's wishlist: http://www.amazon.co.uk/wishlist/B9PFN
 
 This package requires ColdFusion 9+ or Lucee 4.5+
 
+Please note that the tests require ColdFusion 10+ or Lucee 4.5+
+
 You will need a valid Postmark account and an associated account token  to interact with the API.
 
 ## Examples
