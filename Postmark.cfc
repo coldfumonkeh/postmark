@@ -1243,11 +1243,24 @@ component output="false" accessors="true" {
   ){
     var sParams = arguments.params;
     for( var key in sParams ){
-      if( !len( sParams[ key ] ) ){
+      if( !hasValue( sParams[ key ] ) ){
         structDelete( sParams, key );
       }
     }
     return sParams;
+  }
+
+  /**
+  * Helper to ensure variables aren't empty
+  */
+  private boolean function hasValue( any value ) {
+    if ( isNull( value ) ) return false;
+    if ( isSimpleValue( value ) ) return len( value );
+    if ( isStruct( value ) ) return !structIsEmpty( value );
+    if ( isArray( value ) ) return arrayLen( value );
+    if ( isQuery( value ) ) return value.recordcount;
+
+    return false;
   }
 
   /**
