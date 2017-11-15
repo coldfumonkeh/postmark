@@ -1243,7 +1243,7 @@ component output="false" accessors="true" {
   ){
     var sParams = arguments.params;
     for( var key in sParams ){
-      if( !hasValue( sParams[ key ] ) ){
+      if( structKeyExists( sParams, key ) && !hasValue( sParams[ key ] ) ){
         structDelete( sParams, key );
       }
     }
