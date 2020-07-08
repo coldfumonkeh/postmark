@@ -59,9 +59,9 @@ component output="false" accessors="true" {
         arrayAppend(
           aAttachments,
           {
-            'Name'        = attachment,
-            'Content'     = toBase64( fileReadBinary( attachment ) ),
-            'ContentType' = getPageContext().getServletContext().getMimeType( attachment )
+            'Name'        = attachment.name,
+            'Content'     = toBase64( fileReadBinary( attachment.srcfile ) ),
+            'ContentType' = getPageContext().getServletContext().getMimeType( attachment.srcfile )
           }
         );
       }
@@ -87,9 +87,9 @@ component output="false" accessors="true" {
           arrayAppend(
             aAttachments,
             {
-              'Name'        = attachment,
-              'Content'     = toBase64( fileReadBinary( attachment ) ),
-              'ContentType' = getPageContext().getServletContext().getMimeType( attachment )
+              'Name'        = attachment.name,
+              'Content'     = toBase64( fileReadBinary( attachment.srcfile ) ),
+              'ContentType' = getPageContext().getServletContext().getMimeType( attachment.srcfile )
             }
           );
         }
