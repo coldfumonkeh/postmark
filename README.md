@@ -58,8 +58,8 @@ oPostmark.sendEmail(
   TextBody='This is the email email.',
   HtmlBody='<p>This is the email body</p>',
   attachments=[
-    '/attachments/test.txt',
-    '/attachments/something.png'
+    {name='Text File', srcfile='/attachments/test.txt'},
+    {name='Image', srcfile='/attachments/something.png'}
   ]
 );
 
@@ -73,8 +73,8 @@ oPostmark.sendBatchEmails(
       subject='First Batch Email',
       TextBody='This is an email.',
       attachments=[
-        '/attachments/test.txt',
-        '/attachments/something.png'
+        {name='Text File', srcfile='/attachments/test.txt'},
+        {name='Image', srcfile='/attachments/something.png'}
       ]
     },
     {
