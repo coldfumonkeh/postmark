@@ -63,7 +63,7 @@ component output="false" accessors="true" {
           {
             'Name'        = attachment.name,
             'Content'     = toBase64( fileReadBinary( attachment.srcfile ) ),
-            'ContentType' = getPageContext().getServletContext().getMimeType( attachment.srcfile )
+            'ContentType' = fileGetMimeType( attachment.srcfile )
           }
         );
       }
