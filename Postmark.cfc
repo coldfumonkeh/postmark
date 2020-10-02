@@ -10,6 +10,31 @@ component output="false" accessors="true" {
     string accountToken = '',
     string baseURL = 'https://api.postmarkapp.com/'
   ){
+    //map sensitive args to env variables or java system props
+    var secrets = {
+      'accountToken': 'POSTMARK_ACCOUNT_TOKEN',
+    };
+
+    var system = createObject( 'java', 'java.lang.System' );
+
+    for ( var key in secrets ) {
+      //arguments are top priority
+      if ( arguments[ key ].len() ) continue;
+
+      //check environment variables
+      var envValue = system.getenv( secrets[ key ] );
+      if ( !isNull( envValue ) && envValue.len() ) {
+        arguments[ key ] = envValue;
+        continue;
+      }
+
+      //check java system properties
+      var propValue = system.getProperty( secrets[ key ] );
+      if ( !isNull( propValue ) && propValue.len() ) {
+        arguments[ key ] = propValue;
+      }
+    }
+
     setAccountToken( arguments.accountToken );
     setBaseURL( arguments.baseURL );
     return this;
