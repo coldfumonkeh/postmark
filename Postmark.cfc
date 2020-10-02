@@ -7,8 +7,8 @@ component output="false" accessors="true" {
   * Constructor
   */
   public Postmark function init(
-    required string accountToken,
-    required string baseURL = 'https://api.postmarkapp.com/'
+    string accountToken = '',
+    string baseURL = 'https://api.postmarkapp.com/'
   ){
     setAccountToken( arguments.accountToken );
     setBaseURL( arguments.baseURL );
