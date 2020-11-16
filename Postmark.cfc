@@ -1129,7 +1129,30 @@ component output="false" accessors="true" {
     return makeServerRequest( endpoint='triggers/inboundrules', serverToken=arguments.serverToken, method='GET', params=sParams );
   }
 
-
+  /**
+  * Get a message stream's suppressions
+  * @serverToken The server token.
+  * @streamId The message stream id.
+  * @SuppressionReason Filter by suppression reason. Possible options: HardBounce, SpamComplaint, ManualSuppression.
+  * @Origin Filter by origin of how the address was added to suppression list. Possible options: Recipient, Customer, Admin
+  * @todate	Filter suppressions up to the date specified (inclusive). e.g. 2020-02-01.
+  * @fromdate	Filter suppressions up to the date specified (inclusive). e.g. 2020-02-01.
+  * @EmailAddress Filter by email address.
+  */
+  public function getSuppressionDump(
+    required string serverToken,
+    required string streamId,
+    string SuppressionReason,
+    string Origin,
+    string todate,
+    string fromdate,
+    string EmailAddress
+  ){
+    var sParams = structCopy( arguments );
+    structDelete( sParams, 'serverToken' );
+    structDelete( sParams, 'streamId' );
+    return makeServerRequest( endpoint='message-streams/#arguments.streamId#/suppressions/dump', serverToken=arguments.serverToken, method='GET', params=sParams );
+  }
 
   /*
   * UTILS
