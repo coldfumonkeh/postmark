@@ -259,6 +259,10 @@ component extends="testbox.system.BaseSpec" {
 
 			it( "should have a function called `listInboundRuleTrigger`", function() {
 				expect( oPostmarkService ).toHaveKey( 'listInboundRuleTrigger' );
+      } );
+
+      it( "should have a function called `getSuppressionDump`", function() {
+				expect( oPostmarkService ).toHaveKey( 'getSuppressionDump' );
 			} );
 
 			it( "should have a function called `makeAccountRequest`", function() {
