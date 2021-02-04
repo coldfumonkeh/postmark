@@ -36,6 +36,7 @@ component output="false" accessors="true" {
   * @TrackLinks Activate link tracking for links in the HTML or Text bodies of this email. Possible options: None HtmlAndText HtmlOnly TextOnly
   * @Metadata Custom metadata key/value pairs.
   * @Attachments List of attachments as an array.
+  * @MessageStream Set Message Stream ID that's used for sending. If not provided, message will default to the "outbound" transactional stream
   */
   public function sendEmail(
     required string serverToken,
@@ -52,7 +53,8 @@ component output="false" accessors="true" {
     boolean TrackOpens,
     string TrackLinks,
     struct Metadata,
-    array Attachments
+    array Attachments,
+    string MessageStream
   ){
     var emailData = stripServerTokenAndClean( arguments );
     var aAttachments = [];
