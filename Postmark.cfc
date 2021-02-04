@@ -34,6 +34,7 @@ component output="false" accessors="true" {
   * @Headers List of custom headers to include.
   * @TrackOpens Activate open tracking for this email.
   * @TrackLinks Activate link tracking for links in the HTML or Text bodies of this email. Possible options: None HtmlAndText HtmlOnly TextOnly
+  * @Metadata Custom metadata key/value pairs.
   * @Attachments List of attachments as an array.
   */
   public function sendEmail(
@@ -50,6 +51,7 @@ component output="false" accessors="true" {
     array Headers,
     boolean TrackOpens,
     string TrackLinks,
+    struct Metadata,
     array Attachments
   ){
     var emailData = stripServerTokenAndClean( arguments );
@@ -61,7 +63,7 @@ component output="false" accessors="true" {
           {
             'Name'        = attachment.name,
             'Content'     = toBase64( fileReadBinary( attachment.srcfile ) ),
-            'ContentType' = getPageContext().getServletContext().getMimeType( attachment.srcfile )
+            'ContentType' = fileGetMimeType( attachment.srcfile )
           }
         );
       }
@@ -89,7 +91,7 @@ component output="false" accessors="true" {
             {
               'Name'        = attachment.name,
               'Content'     = toBase64( fileReadBinary( attachment.srcfile ) ),
-              'ContentType' = getPageContext().getServletContext().getMimeType( attachment.srcfile )
+              'ContentType' = fileGetMimeType( attachment.srcfile )
             }
           );
         }
