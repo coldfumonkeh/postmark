@@ -1,9 +1,9 @@
 {
     "name":"Postmark",
     "slug":"postmark",
-    "version":"1.3.0",
+    "version":"1.4.0",
     "author":"Matt Gifford <matt@monkehworks.com>",
-    "location":"coldfumonkeh/postmark#v1.3.0",
+    "location":"coldfumonkeh/postmark#v1.4.0",
     "directory":"",
     "createPackageDirectory":"true",
     "homepage":"https://github.com/coldfumonkeh/postmark",
@@ -13,8 +13,11 @@
         "type":"git",
         "URL":"https://github.com/coldfumonkeh/postmark.git"
     },
-    "license" : [
-        { "type" : "MIT", "URL" : "https://github.com/coldfumonkeh/postmark/blob/main/LICENSE" }
+    "license":[
+        {
+            "type":"MIT",
+            "URL":"https://github.com/coldfumonkeh/postmark/blob/main/LICENSE"
+        }
     ],
     "bugs":"https://github.com/coldfumonkeh/postmark/issues",
     "shortDescription":"A ColdFusion wrapper to interact with the Postmark App API",
