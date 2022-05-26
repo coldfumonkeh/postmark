@@ -13,6 +13,9 @@
         "type":"git",
         "URL":"https://github.com/coldfumonkeh/postmark.git"
     },
+    "license" : [
+        { "type" : "MIT", "URL" : "https://github.com/coldfumonkeh/postmark/blob/main/LICENSE" }
+    ],
     "bugs":"https://github.com/coldfumonkeh/postmark/issues",
     "shortDescription":"A ColdFusion wrapper to interact with the Postmark App API",
     "keywords":[
